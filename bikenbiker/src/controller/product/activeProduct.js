@@ -1,11 +1,11 @@
 import { Product } from "../../model/productModel.js"; 
 
 /**
- * deleteProduct
+ * activeProduct
  * @param req
  * @param res
  */
-export const deleteProduct = async (req, res, next) => {
+export const activeProduct = async (req, res, next) => {
   try {
     const prodId = req.params.id ? req.params.id : null;
     if (!prodId) {
@@ -16,11 +16,11 @@ export const deleteProduct = async (req, res, next) => {
       throw new Error("Invalid Id");
     }
 
-    product.status = "deleted";
+    product.status = "active";
     const updatedProduct = await product.save();
 
     return res.status(200).json({
-      message: "Deleted successfully",
+      message: "Active successfully",
       deletedProduct: updatedProduct,
     });
   } catch (error) {

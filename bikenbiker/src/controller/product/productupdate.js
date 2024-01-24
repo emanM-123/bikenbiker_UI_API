@@ -10,7 +10,7 @@ import { Product } from "../../model/productModel.js";
 export const productupdate = async (req, res, next) => {
   try {
     const reqBody = req.body;
-    const prodId = reqBody.prod_id ? reqBody.prod_id : "";
+    const prodId = req.params.id ? req.params.id : null;
 
     if (!prodId) {
       throw new Error("Product Id is required");

@@ -1,14 +1,18 @@
 // App.js
 import React from 'react';
-import ProductList from './ProductList';
+import ProductList from './prodectList/ProductList';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1>Product Management App</h1>
-      <ProductList />
+    <div className="App">
+      <header className="App-header">
+        <h1>Product Management App</h1>
+      </header>
+      <main>
+        <ProductList />
+      </main>
     </div>
   );
-};
+}
 
 export default App;

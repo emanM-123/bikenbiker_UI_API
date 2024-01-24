@@ -10,8 +10,8 @@ v1ProdRouter.post(
   productRouter.addProduct
 );
 
-v1ProdRouter.post(
-  "/update",
+v1ProdRouter.patch(
+  "/update/:id",
   productRouter.productupdate
 );
 
@@ -23,6 +23,12 @@ v1ProdRouter.get(
 v1ProdRouter.delete(
   "/delete/:id",
   productRouter.deleteProduct
+);
+
+
+v1ProdRouter.patch(
+  "/active/:id",
+  productRouter.activeProduct
 );
 
 export { v1ProdRouter };
